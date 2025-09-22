@@ -25,13 +25,13 @@ services:
       - key: FIREBASE_CLIENT_EMAIL
         sync: false
       - key: ALLOWED_ORIGINS
-        value: https://unified-mind-dashboard.onrender.com,https://unified-mind-chat.onrender.com,https://unified-mind-mindfulness.onrender.com,https://unified-mind-resources.onrender.com
+        value: https://mind-saathi-dashboard.onrender.com,https://mind-saathi-chat.onrender.com,https://mind-saathi-mindfulness.onrender.com,https://mind-saathi-resources.onrender.com
 
   # Dashboard Frontend
   - type: web
-    name: unified-mind-dashboard
+    name: mind-saathi-dashboard
     env: static
-    buildCommand: npm run build:dashboard
+    buildCommand: npm install && cd dashboard && npm install && npm run build
     staticPublishPath: ./dashboard/dist
     pullRequestPreviewsEnabled: false
     headers:
@@ -51,9 +51,9 @@ services:
 
   # Chat Frontend
   - type: web
-    name: unified-mind-chat
+    name: mind-saathi-chat
     env: static
-    buildCommand: npm run build:chat
+    buildCommand: npm install && cd "chat app FINAL/frontend" && npm install && npm run build
     staticPublishPath: ./chat app FINAL/frontend/dist
     pullRequestPreviewsEnabled: false
     routes:
@@ -63,9 +63,9 @@ services:
 
   # Mindfulness Frontend
   - type: web
-    name: unified-mind-mindfulness
+    name: mind-saathi-mindfulness
     env: static
-    buildCommand: npm run build:mindfulness
+    buildCommand: npm install && cd mindfulness-client && npm install && npm run build
     staticPublishPath: ./mindfulness-client/build
     pullRequestPreviewsEnabled: false
     routes:
@@ -75,9 +75,9 @@ services:
 
   # Resources Frontend
   - type: web
-    name: unified-mind-resources
+    name: mind-saathi-resources
     env: static
-    buildCommand: npm run build:resource
+    buildCommand: npm install && cd resource && npm install && npm run build
     staticPublishPath: ./resource/build
     pullRequestPreviewsEnabled: false
     routes:
@@ -86,7 +86,7 @@ services:
         destination: /index.html
 
 databases:
-  - name: unified-mind-db
-    databaseName: unified_mind_app
-    user: unified_mind_user
+  - name: mind-saathi-db
+    databaseName: mind_saathi_app
+    user: mind_saathi_user
     plan: starter
