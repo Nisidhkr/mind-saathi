@@ -8,9 +8,10 @@ export const SocketProvider = ({ children }) => {
   const [nickname, setNickname] = useState("");
 
   useEffect(() => {
-    console.log("🔌 Attempting to connect to socket server at http://localhost:5005");
+    const socketUrl = import.meta.env.VITE_SOCKET_URL || "http://localhost:5000";
+    console.log(`🔌 Attempting to connect to socket server at ${socketUrl}`);
     
-    const newSocket = io("http://localhost:5005", {
+    const newSocket = io(socketUrl, {
       transports: ['websocket', 'polling'],
       timeout: 10000,
       forceNew: true

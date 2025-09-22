@@ -88,12 +88,13 @@ const Posts = () => {
   };
 
   const handleBackToDashboard = () => {
+    const dashboardUrl = import.meta.env.VITE_DASHBOARD_URL || 'http://localhost:5173/dashboard';
     // Try to navigate parent window (if in iframe)
     if (window.parent && window.parent !== window) {
-      window.parent.location.href = 'http://localhost:3000/dashboard';
+      window.parent.location.href = dashboardUrl;
     } else {
       // If not in iframe, navigate current window
-      window.location.href = 'http://localhost:3000/dashboard';
+      window.location.href = dashboardUrl;
     }
   };
 

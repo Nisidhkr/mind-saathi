@@ -17,7 +17,8 @@ const ConnectionTest = () => {
     try {
       // Test API Health
       console.log('🔄 Testing API health...');
-      const healthResponse = await fetch('http://localhost:5005/api/health');
+      const apiUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+      const healthResponse = await fetch(`${apiUrl.replace('/api', '')}/api/health`);
       const healthText = await healthResponse.text();
       console.log('✅ Health check:', healthText);
 
