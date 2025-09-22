@@ -12,7 +12,7 @@
     "dev:chat-backend": "npm run dev --prefix \"chat app FINAL/backend\"",
     "dev:chat-frontend": "npm run dev --prefix \"chat app FINAL/frontend\"",
     "all": "concurrently --names \"BACKEND,DASHBOARD,MINDFULNESS,CHAT-BACKEND,CHAT-FRONTEND\" \"npm run dev:backend\" \"npm run dev:dashboard\" \"npm run dev:mindfulness-client\" \"npm run dev:chat-backend\" \"npm run dev:chat-frontend\"",
-    "build": "npm run build --prefix dashboard && npm run build --prefix mindfulness-client && npm run build --prefix resource && npm run build --prefix \"chat app FINAL/frontend\"",
+    "build": "npm run install:all && npm run build:dashboard && npm run build:mindfulness && npm run build:resource && npm run build:chat",
     "build:all": "npm run install:all && npm run build",
     "build:dashboard": "npm run build --prefix dashboard",
     "build:chat": "npm run build --prefix \"chat app FINAL/frontend\"",
