@@ -1,0 +1,1865 @@
+/* Global - Modern Minimal Design */
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.6;
+}
+
+/* Add subtle background gradients */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  z-index: -2;
+}
+
+/* Subtle accent shapes */
+body::after {
+  content: '';
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  border-radius: 50%;
+  opacity: 0.15;
+  filter: blur(60px);
+  z-index: -1;
+}
+
+/* App container - Generous spacing */
+.app-root {
+  padding: 2rem 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* Title - Large Bold Typography */
+.app-title {
+  text-align: center;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  margin-bottom: 3rem;
+  color: #111827;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.app-title .highlight {
+  color: #1E5C50;
+}
+
+.app-subtitle {
+  text-align: center;
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
+  font-weight: 300;
+  color: #6b7280;
+  margin-bottom: 4rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+}
+
+/* Section Headers - Large Bold Typography */
+.section-header {
+  text-align: center;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.section-divider {
+  width: 6rem;
+  height: 0.25rem;
+  background: #1E5C50;
+  margin: 0 auto 3rem auto;
+  border-radius: 9999px;
+}
+
+/* Mood Checkin - Modern Layout */
+.mood-checkin {
+  margin-bottom: 8rem;
+  padding: 0 1.5rem;
+}
+
+.mood-checkin h2 {
+  text-align: center;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+/* Mood Buttons - Modern Cards */
+.mood-btn {
+  width: 160px;
+  height: 160px;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111827;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.mood-btn:hover {
+  background: #f9fafb;
+  transform: translateY(-4px);
+  border-color: #1E5C50;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.mood-btn.active {
+  background: #1E5C50;
+  color: #ffffff;
+  border-color: #1E5C50;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(30, 92, 80, 0.3), 0 10px 10px -5px rgba(30, 92, 80, 0.2);
+}
+
+.mood-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.mood-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Breathing exercises - Modern Grid */
+.breathing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  padding: 0 1.5rem;
+}
+
+.exercise-card {
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+.exercise-card:hover {
+  transform: translateY(-8px);
+  border-color: #1E5C50;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.exercise-card.active {
+  transform: translateY(-8px);
+  border-color: #1E5C50;
+  background: #f0fdfa;
+  box-shadow: 0 20px 25px -5px rgba(30, 92, 80, 0.15), 0 10px 10px -5px rgba(30, 92, 80, 0.1);
+}
+
+.exercise-left {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.exercise-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.exercise-pattern {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.exercise-purpose {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.exercise-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.exercise-time {
+  font-size: 0.875rem;
+  color: #1E5C50;
+  font-weight: 600;
+  background: #f0fdfa;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+.gear {
+  font-size: 1.25rem;
+  color: #6b7280;
+  transition: color 0.3s ease;
+}
+
+.exercise-card:hover .gear {
+  color: #1E5C50;
+}
+
+/* Mood Graph - Modern Card */
+.chart-container {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+}
+
+/* Modern Card */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #1E5C50;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 14px;
+  background: #ffffff;
+  border-bottom: 2px solid #e9ecef;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+  color: #2d3436;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #00A693;
+}
+
+/* Modal / Backdrop - Modern Design */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.modal {
+  width: 100%;
+  max-width: 28rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  color: #111827;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.modal-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  color: #1E5C50;
+  background: #f3f4f6;
+}
+
+.modal-body p {
+  margin: 6px 0;
+  color: #6c757d;
+}
+
+.timer-display {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.time-large {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1E5C50;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 0.75rem;
+  background: #f3f4f6;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1E5C50, #2dd4bf);
+  width: 0%;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 9999px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* Modern Buttons */
+.start-btn, .stop-btn, .close-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-btn {
+  background: #1E5C50;
+  color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(30, 92, 80, 0.3);
+}
+
+.start-btn:hover {
+  background: #164e42;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(30, 92, 80, 0.4);
+}
+
+.stop-btn {
+  background: #dc2626;
+  color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.3);
+}
+
+.stop-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.4);
+}
+
+.close-btn {
+  background: #f3f4f6;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+}
+
+.close-btn:hover {
+  background: #e5e7eb;
+  color: #374151;
+  transform: translateY(-1px);
+}
+
+/* Mood main card - Modern Design */
+.mood-main-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 2rem;
+}
+
+.mood-main-card:hover {
+  transform: translateY(-4px);
+  border-color: #1E5C50;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.mood-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.mood-toggle {
+  font-size: 1.5rem;
+  color: #1E5C50;
+  transition: transform 0.3s ease;
+}
+
+.mood-main-card:hover .mood-toggle {
+  transform: scale(1.1);
+}
+
+.mood-grid-vertical {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.mood-card {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  min-height: 160px;
+}
+
+.mood-card:hover {
+  transform: translateY(-6px);
+  border-color: #1E5C50;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.mood-card.active {
+  border-color: #1E5C50;
+  background: #1E5C50;
+  color: #ffffff;
+  transform: translateY(-6px);
+  box-shadow: 0 20px 25px -5px rgba(30, 92, 80, 0.3), 0 10px 10px -5px rgba(30, 92, 80, 0.2);
+}
+
+.mood-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.mood-emoji {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.mood-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mood-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: inherit;
+}
+
+.mood-desc {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 4px;
+}
+
+.mood-right {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.breathing-circle {
+  margin: 2rem auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(30, 92, 80, 0.1);
+  border: 4px solid #1E5C50;
+  position: relative;
+}
+
+.breathing-circle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: rgba(30, 92, 80, 0.05);
+  border: 2px solid rgba(30, 92, 80, 0.3);
+}
+
+.breathing-circle.animate {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
+/* Tags - Modern Pills */
+.tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.tag {
+  padding: 0.75rem 1rem;
+  border-radius: 9999px;
+  background: #f9fafb;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.tag:hover {
+  border-color: #1E5C50;
+  background: #f0fdfa;
+  color: #1E5C50;
+  transform: translateY(-1px);
+}
+
+.tag.active {
+  background: #1E5C50;
+  color: #ffffff;
+  border-color: #1E5C50;
+  font-weight: 600;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(30, 92, 80, 0.3);
+}
+
+/* Modern textarea */
+.note-box {
+  width: 100%;
+  min-height: 100px;
+  max-height: 200px;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  background: #ffffff;
+  color: #111827;
+  resize: vertical;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.note-box:focus {
+  border-color: #1E5C50;
+  box-shadow: 0 0 0 3px rgba(30, 92, 80, 0.1);
+}
+
+/* AI Summary */
+.ai-summary {
+  padding: 16px;
+  background: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  margin-top: 12px;
+  color: #2d3436;
+  line-height: 1.5;
+  font-size: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.range-select {
+  margin: 10px 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  background: #ffffff;
+  color: #2d3436;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+.range-select:focus {
+  outline: none;
+  border-color: #1E5C50;
+  box-shadow: 0 0 0 3px rgba(30, 92, 80, 0.1);
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+.mb-32 {
+  margin-bottom: 8rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-gray-800 {
+  color: #1f2937;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-gray-500 {
+  color: #6b7280;
+}
+
+/* Meditation Specific Styles */
+.meditation-section {
+  padding: 0 1.5rem;
+}
+
+.meditation-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.meditation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1E5C50, #2dd4bf);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.meditation-card:hover::before {
+  opacity: 1;
+}
+
+.meditation-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  text-align: center;
+}
+
+.meditation-modal {
+  max-width: 32rem;
+}
+
+.meditation-info {
+  margin-bottom: 2rem;
+}
+
+.meditation-type-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f0fdfa;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #a7f3d0;
+}
+
+.meditation-icon-large {
+  font-size: 2.5rem;
+}
+
+.meditation-type {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1E5C50;
+}
+
+.meditation-duration {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.meditation-description {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.meditation-preparation h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.preparation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.preparation-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  color: #6b7280;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.preparation-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #1E5C50;
+  font-weight: bold;
+}
+
+.preparation-list li:last-child {
+  border-bottom: none;
+}
+
+.meditation-active {
+  text-align: center;
+}
+
+.meditation-circle {
+  margin: 2rem auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(30, 92, 80, 0.1), rgba(30, 92, 80, 0.05));
+  border: 4px solid #1E5C50;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meditation-circle::before {
+  content: '🧘‍♀️';
+  font-size: 3rem;
+  position: absolute;
+}
+
+.meditation-circle.animate {
+  animation: meditate 6s ease-in-out infinite;
+}
+
+@keyframes meditate {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.meditation-guidance {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 0.75rem;
+  border-left: 4px solid #1E5C50;
+}
+
+.meditation-guidance p {
+  margin: 0;
+  color: #6b7280;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.meditation-completion {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.completion-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.meditation-completion h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.meditation-completion p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.completion-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1E5C50;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Period Tracker Styles */
+.period-tracker {
+  padding: 0 1.5rem;
+}
+
+.period-tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.period-tracker-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.add-period-btn {
+  padding: 0.75rem 1.5rem;
+  background: #ec4899;
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(236, 72, 153, 0.3);
+}
+
+.add-period-btn:hover {
+  background: #db2777;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.4);
+}
+
+.period-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Period Calendar */
+.period-calendar {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.calendar-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.nav-button {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: #6b7280;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: #ec4899;
+  color: white;
+  border-color: #ec4899;
+}
+
+.calendar-grid {
+  width: 100%;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  margin-bottom: 1rem;
+}
+
+.weekday {
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: #f3f4f6;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.calendar-day {
+  background: #ffffff;
+  padding: 0.75rem;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.calendar-day:hover {
+  background: #fdf2f8;
+}
+
+.calendar-day.other-month {
+  color: #d1d5db;
+  background: #f9fafb;
+}
+
+.calendar-day.other-month:hover {
+  background: #f3f4f6;
+}
+
+.calendar-day.today {
+  background: #fef3c7;
+  font-weight: 700;
+  color: #92400e;
+}
+
+.calendar-day.today:hover {
+  background: #fde68a;
+}
+
+.calendar-day.period-day {
+  background: #fce7f3;
+  color: #be185d;
+  font-weight: 600;
+}
+
+.calendar-day.period-day:hover {
+  background: #fbcfe8;
+}
+
+.calendar-day.predicted-day {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 2px dashed #0ea5e9;
+}
+
+.day-number {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.period-indicator {
+  display: flex;
+  gap: 2px;
+  margin-top: auto;
+}
+
+.flow-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ec4899;
+}
+
+.flow-indicator.light {
+  background: #f9a8d4;
+}
+
+.flow-indicator.medium {
+  background: #ec4899;
+}
+
+.flow-indicator.heavy {
+  background: #be185d;
+}
+
+.predicted-indicator {
+  font-size: 0.75rem;
+  color: #0369a1;
+  font-weight: bold;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 0.25rem;
+}
+
+.legend-color.period-day {
+  background: #fce7f3;
+  border: 1px solid #ec4899;
+}
+
+.legend-color.predicted-day {
+  background: #e0f2fe;
+  border: 2px dashed #0ea5e9;
+}
+
+.legend-color.today {
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+}
+
+/* Period Form Overlay */
+.period-form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.period-form {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.form-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #f3f4f6;
+  color: #ec4899;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+}
+
+.form-section h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ec4899;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-group small {
+  color: #6b7280;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Symptoms Grid */
+.symptoms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.symptom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.symptom-checkbox:hover {
+  border-color: #ec4899;
+  background: #fdf2f8;
+}
+
+.symptom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #d1d5db;
+  border-radius: 0.25rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.symptom-checkbox input[type="checkbox"]:checked + .checkmark {
+  background: #ec4899;
+  border-color: #ec4899;
+}
+
+.symptom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  content: '✓';
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Mood Options */
+.mood-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+
+.mood-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.mood-option:hover {
+  border-color: #ec4899;
+  background: #fdf2f8;
+}
+
+.mood-option input[type="radio"] {
+  display: none;
+}
+
+.mood-option input[type="radio"]:checked + .mood-indicator {
+  transform: scale(1.2);
+}
+
+.mood-option input[type="radio"]:checked ~ * {
+  color: #ec4899;
+  font-weight: 600;
+}
+
+.mood-indicator {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.mood-indicator.happy {
+  background: #fef3c7;
+  border: 2px solid #f59e0b;
+}
+
+.mood-indicator.sad {
+  background: #dbeafe;
+  border: 2px solid #3b82f6;
+}
+
+.mood-indicator.anxious {
+  background: #fef2f2;
+  border: 2px solid #ef4444;
+}
+
+.mood-indicator.irritated {
+  background: #fdf4ff;
+  border: 2px solid #a855f7;
+}
+
+.mood-indicator.normal {
+  background: #f0fdf4;
+  border: 2px solid #22c55e;
+}
+
+.mood-indicator.energetic {
+  background: #fff7ed;
+  border: 2px solid #f97316;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.cancel-btn,
+.delete-btn,
+.submit-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn {
+  background: #f9fafb;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+}
+
+.cancel-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.delete-btn {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  color: white;
+}
+
+.submit-btn {
+  background: #ec4899;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(236, 72, 153, 0.3);
+}
+
+.submit-btn:hover {
+  background: #db2777;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.4);
+}
+
+/* Period Stats */
+.period-stats {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+}
+
+.period-stats h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  border: 1px solid #f3f4f6;
+  border-radius: 1rem;
+  background: #fafafa;
+}
+
+.stat-card.prediction {
+  background: linear-gradient(135deg, #fdf2f8, #fce7f3);
+  border-color: #f9a8d4;
+}
+
+.stat-card.cycle-info {
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border-color: #7dd3fc;
+}
+
+.stat-card.last-period {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-color: #86efac;
+}
+
+.stat-card.symptoms {
+  background: linear-gradient(135deg, #fefce8, #fef3c7);
+  border-color: #fde047;
+}
+
+.stat-header h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.stat-content {
+  color: #6b7280;
+}
+
+.next-date {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ec4899;
+  margin-bottom: 0.5rem;
+}
+
+.days-until {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #111827;
+}
+
+.last-period-date {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #059669;
+  margin-bottom: 0.25rem;
+}
+
+.days-ago {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.symptoms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.symptom-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.symptom-name {
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.symptom-frequency {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.frequency-bar {
+  width: 60px;
+  height: 6px;
+  background: #f3f4f6;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.frequency-fill {
+  height: 100%;
+  background: #f59e0b;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.frequency-text {
+  font-size: 0.75rem;
+  color: #6b7280;
+  min-width: 30px;
+}
+
+/* Cycle Tips */
+.cycle-tips {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 1rem;
+  border-left: 4px solid #ec4899;
+}
+
+.cycle-tips h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.tips-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.tip-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Recent Periods */
+.recent-periods {
+  margin-top: 3rem;
+}
+
+.recent-periods h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.period-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.period-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.period-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.period-date {
+  font-weight: 600;
+  color: #111827;
+}
+
+.period-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flow-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.flow-badge.light {
+  background: #fef7ff;
+  color: #a21caf;
+  border: 1px solid #f3e8ff;
+}
+
+.flow-badge.medium {
+  background: #fdf2f8;
+  color: #be185d;
+  border: 1px solid #fce7f3;
+}
+
+.flow-badge.heavy {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.symptoms {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.edit-btn {
+  padding: 0.5rem 1rem;
+  background: #f9fafb;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  background: #ec4899;
+  color: white;
+  border-color: #ec4899;
+}
+
+.loading,
+.stats-loading {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+}
+
+.no-data p {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-root {
+    padding: 1rem;
+  }
+  
+  .breathing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .mood-grid-vertical {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+  
+  .mood-card {
+    min-height: 140px;
+  }
+  
+  .exercise-card {
+    min-height: 180px;
+  }
+  
+  .modal {
+    margin: 1rem;
+    max-width: calc(100vw - 2rem);
+  }
+  
+  .meditation-circle {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .meditation-circle::before {
+    font-size: 2.5rem;
+  }
+  
+  .completion-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Period Tracker Mobile Styles */
+  .period-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .period-tracker-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .period-tracker-header h2 {
+    text-align: center;
+  }
+
+  .calendar-day {
+    min-height: 50px;
+    padding: 0.5rem;
+  }
+
+  .weekdays {
+    margin-bottom: 0.5rem;
+  }
+
+  .weekday {
+    padding: 0.5rem;
+  }
+
+  .legend {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .legend-item {
+    font-size: 0.75rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .symptoms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mood-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .period-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .period-details {
+    align-self: stretch;
+    justify-content: space-between;
+  }
+
+  .stats-grid {
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+}

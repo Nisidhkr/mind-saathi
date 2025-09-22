@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chatbot</title>
+  <style>
+    #chatbot {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      border: 1px solid #2563eb;
+      border-radius: 10px;
+      background: #fff;
+      display: none; /* hidden by default */
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      font-family: Arial, sans-serif;
+    }
+    /* Header Bar */
+    #chatbot-header {
+      background: #2563eb;
+      color: white;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      border-radius: 10px 10px 0 0;
+    }
+    #chatbot-header img {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: white;
+      padding: 2px;
+    }
+    #chat {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+    .msg-row {
+      display: flex;
+      align-items: flex-end;
+      margin: 6px 0;
+    }
+    .msg {
+      padding: 8px 12px;
+      border-radius: 15px;
+      max-width: 65%;
+      font-size: 14px;
+    }
+    .You {
+      background: #2563eb;
+      color: white;
+      border-bottom-right-radius: 2px;
+      margin-left: auto;
+    }
+    .Bot {
+      background: #e5e7eb;
+      color: #111;
+      border-bottom-left-radius: 2px;
+      margin-right: auto;
+    }
+    .avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      margin: 0 6px;
+    }
+    #msg {
+      flex: 1;
+      padding: 8px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+    }
+    #chat-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+      background: #fff;
+    }
+    #chat-input button {
+      padding: 8px 12px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      border-radius: 0 0 10px 0;
+    }
+    /* Floating logo button */
+    #chatbot-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #2563eb;
+      color: white;
+      font-size: 22px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating logo -->
+  <button id="chatbot-btn">🤖</button>
+
+  <!-- Chatbot window -->
+  <div id="chatbot">
+    <div id="chatbot-header">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="Bot">
+      MindSathi
+    </div>
+    <div id="chat"></div>
+    <div id="chat-input">
+      <input id="msg" placeholder="Type a message..." />
+      <button onclick="send()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const chat = document.getElementById("chat");
+    const input = document.getElementById("msg");
+    const chatbot = document.getElementById("chatbot");
+    const chatbotBtn = document.getElementById("chatbot-btn");
+
+    // Toggle chatbot on logo click
+    chatbotBtn.addEventListener("click", () => {
+      chatbot.style.display = chatbot.style.display === "flex" ? "none" : "flex";
+    });
+
+    function addMessage(text, cls) {
+      const row = document.createElement("div");
+      row.classList.add("msg-row");
+
+      const msg = document.createElement("div");
+      msg.textContent = text;
+      msg.classList.add("msg", cls);
+
+      const avatar = document.createElement("img");
+      avatar.classList.add("avatar");
+
+      if (cls === "You") {
+        avatar.src = "https://cdn-icons-png.flaticon.com/512/847/847969.png"; // user icon
+        row.appendChild(msg);
+        row.appendChild(avatar);
+      } else {
+        avatar.src = "https://cdn-icons-png.flaticon.com/512/4712/4712109.png"; // bot icon
+        row.appendChild(avatar);
+        row.appendChild(msg);
+      }
+
+      chat.appendChild(row);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    async function send() {
+      const text = input.value;
+      if (!text.trim()) return;
+      addMessage(text, "You");
+      input.value = "";
+      try {
+        const res = await fetch("http://localhost:3000/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: text })
+        });
+        const data = await res.json();
+
+        setTimeout(() => {
+          addMessage(data.reply, "Bot");
+        }, 1200);
+      } catch {
+        setTimeout(() => {
+          addMessage("⚠️ Server not responding", "Bot");
+        }, 1200);
+      }
+    }
+
+    // Enter key sends on laptop only
+    input.addEventListener("keydown", function (e) {
+      const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+      if (!isMobile && e.key === "Enter") {
+        e.preventDefault();
+        send();
+      }
+    });
+  </script>
+</body>
+</html>

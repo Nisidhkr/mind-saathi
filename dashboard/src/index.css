@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌟 Perylene Green Theme Custom Styles */
+body {
+  @apply bg-white text-perylene-800 antialiased font-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold text-perylene-900;
+}
+
+a {
+  @apply text-perylene-600 hover:text-perylene-700 transition-colors duration-200;
+}
+
+button {
+  @apply px-4 py-2 rounded-lg bg-gradient-to-r from-perylene-600 to-perylene-700 text-white font-medium hover:from-perylene-700 hover:to-perylene-800 transition-all duration-200 shadow-perylene;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-perylene-50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-perylene-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-perylene-500;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Custom gradient text utility */
+.gradient-text {
+  @apply bg-gradient-to-r from-perylene-600 to-perylene-800 bg-clip-text text-transparent;
+}
+
+/* Custom glass effect */
+.glass {
+  @apply bg-white/80 backdrop-blur-sm border border-perylene-200/50;
+}
+
+/* Custom hover effects */
+.hover-lift {
+  @apply transform hover:scale-105 transition-transform duration-200;
+}
+
+.hover-glow {
+  @apply hover:shadow-perylene-lg transition-shadow duration-200;
+}

@@ -1,0 +1,37 @@
+{
+  "name": "unified-mind-app",
+  "version": "1.0.0",
+  "description": "Unified Mind Wellness Application",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix dashboard && npm install --prefix mindfulness-backend && npm install --prefix mindfulness-client && npm install --prefix resource && npm install --prefix dashboard/backend && npm install --prefix \"chat app FINAL/backend\" && npm install --prefix \"chat app FINAL/frontend\"",
+    "dev:dashboard": "cd dashboard && set PORT=5173 && npm run dev",
+    "dev:mindfulness-backend": "npm run dev --prefix mindfulness-backend",
+    "dev:mindfulness-client": "cd mindfulness-client && set PORT=3001 && set BROWSER=none && set REACT_APP_BROWSER=none && npm start",
+    "dev:resource": "npm start --prefix resource",
+    "dev:backend": "npm start --prefix backend",
+    "dev:chat-backend": "npm run dev --prefix \"chat app FINAL/backend\"",
+    "dev:chat-frontend": "npm run dev --prefix \"chat app FINAL/frontend\"",
+    "all": "concurrently --names \"BACKEND,DASHBOARD,MINDFULNESS,CHAT-BACKEND,CHAT-FRONTEND\" \"npm run dev:backend\" \"npm run dev:dashboard\" \"npm run dev:mindfulness-client\" \"npm run dev:chat-backend\" \"npm run dev:chat-frontend\"",
+    "build": "npm run build --prefix dashboard && npm run build --prefix mindfulness-client && npm run build --prefix resource && npm run build --prefix \"chat app FINAL/frontend\"",
+    "build:all": "npm run install:all && npm run build",
+    "build:dashboard": "npm run build --prefix dashboard",
+    "build:chat": "npm run build --prefix \"chat app FINAL/frontend\"",
+    "build:mindfulness": "npm run build --prefix mindfulness-client",
+    "build:resource": "npm run build --prefix resource",
+    "serve:dashboard": "serve -s dashboard/dist -p 5173",
+    "serve:chat": "serve -s \"chat app FINAL/frontend/dist\" -p 3000",
+    "serve:mindfulness": "serve -s mindfulness-client/build -p 3001",
+    "serve:resource": "serve -s resource/build -p 3002"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "serve": "^14.2.5"
+  },
+  "keywords": [
+    "wellness",
+    "mindfulness",
+    "mental-health"
+  ],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: custom styles if you want */
+body {
+  @apply bg-gray-50 text-gray-800;
+}
+
+/* Design tokens via Tailwind components utilities */
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 bg-perylene-600 text-white font-semibold rounded-2xl md:rounded-3xl shadow-lg hover:bg-perylene-700 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-perylene-300;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-2xl md:rounded-3xl hover:bg-gray-50 hover:border-gray-400 shadow-sm hover:shadow transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-200;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-2xl md:rounded-3xl border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+  .card-muted {
+    @apply bg-gray-50 rounded-2xl border border-gray-200;
+  }
+
+  /* Headings */
+  .headline {
+    @apply text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-none tracking-tight;
+  }
+  .subtext {
+    @apply text-xl md:text-2xl text-gray-600 font-light leading-relaxed;
+  }
+
+  /* Layout helpers */
+  .section {
+    @apply py-32;
+  }
+  .container-xl {
+    @apply max-w-7xl mx-auto px-6;
+  }
+
+  /* Subtle float animation helper */
+  .float-soft {
+    @apply will-change-transform;
+    animation: float-soft 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
