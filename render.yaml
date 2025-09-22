@@ -1,7 +1,7 @@
 services:
   # Backend API Service
   - type: web
-    name: unified-mind-backend
+    name: mind-saathi-backend
     env: node
     plan: starter
     buildCommand: cd backend && npm install
@@ -13,9 +13,7 @@ services:
       - key: PORT
         value: 10000
       - key: MONGO_URI
-        fromDatabase:
-          name: unified-mind-db
-          property: connectionString
+        sync: false
       - key: JWT_SECRET
         generateValue: true
       - key: FIREBASE_PROJECT_ID
@@ -85,8 +83,3 @@ services:
         source: /*
         destination: /index.html
 
-databases:
-  - name: mind-saathi-db
-    databaseName: mind_saathi_app
-    user: mind_saathi_user
-    plan: starter
